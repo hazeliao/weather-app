@@ -24,7 +24,7 @@ export class WeatherDataService {
   service = 'WFS'; 
   version = '2.0.0';
   request = 'getFeature';
-  stored_query_id = 'fmi::forecast::harmonie::hybrid::point::simple';
+  storedquery_id = 'fmi::forecast::harmonie::hybrid::point::simple';
   parameters = 'temperature';
   place = 'Helsinki'; // Default to Helsinki
   timestep = 60 * 24;//24 hour timestep 6 hour timesteps.
@@ -48,7 +48,7 @@ export class WeatherDataService {
       'service='          + this.service +
       '&version='         + this.version +
       '&request='         + this.request +
-      '&storedquery_id='  + this.stored_query_id +
+      '&storedquery_id='  + this.storedquery_id +
       '&parameters='      + this.parameters +
       '&place='           + this.place +
       '&timestep='        + this.timestep +
