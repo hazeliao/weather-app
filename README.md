@@ -18,9 +18,9 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Running end-to-end regression tests with the Robot Framework
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `robot testweather.robot in the /e2e/ folder` to execute the end-to-end tests via [Robot Framework](https://robotframework.org/).
 
 ## Further help
 
