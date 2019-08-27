@@ -1,11 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { DisplayWeatherForecastComponent } from './display-weather-forecast/display-weather-forecast.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       declarations: [
-        AppComponent
+        AppComponent,
+        DisplayWeatherForecastComponent
       ],
     }).compileComponents();
   }));
@@ -26,6 +30,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('weather-app app is running!');
+    expect(compiled.querySelector('#apptitle').textContent).toContain('weather-app is running!');
   });
 });

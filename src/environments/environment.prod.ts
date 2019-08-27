@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  weatherDataBaseURL: 'http://opendata.fmi.fi/wfs?'
 };
