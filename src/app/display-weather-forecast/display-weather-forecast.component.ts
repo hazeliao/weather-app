@@ -37,9 +37,7 @@ export class DisplayWeatherForecastComponent implements OnInit {
     for (let i = 0; i < arrayOfTemperaturesAsElements.length; i++) {
         this.threeDaysForecast.push("On " + moment(arrayOfTimesAsElements[i].textContent).format('MMMM Do YYYY, h:mm:ss a') + " the temperature will be " + arrayOfTemperaturesAsElements[i].textContent + " degrees Celcius.");
     }
-    console.log(arrayOfTemperaturesAsElements);
   }
-
 
   getWeatherForecastFromFMI(): void {
     this.weatherDataService.setPlace(this.selectedLocation);
@@ -53,7 +51,6 @@ export class DisplayWeatherForecastComponent implements OnInit {
 
   getWeatherForecastFromOpenWeatherMap(): void {
     this.weatherDataService.getCurrentWeeksWeather().subscribe((result) => {
-      console.log(result);
       this.oneWeeksForecast = [];
       
       let dateArray = [];
@@ -74,15 +71,10 @@ export class DisplayWeatherForecastComponent implements OnInit {
         }
       });
 
-      console.log("dateArray:", dateArray);
-      console.log("maxTempArray:", maxTempArray);
-      console.log("minTempArray:", minTempArray);
-
       result.list = result.list.filter((oneTime) => {
         return oneTime.dt_txt.includes("00:00:00");
       });
     
-
       for ( let i = 0; i < result.list.length; i++ ) {
         this.oneWeeksForecast.push("" + moment(result.list[i].dt_txt).format('dddd') + " degrees Celcius min: " + minTempArray[i] + " max: " + maxTempArray[i]);
       }
