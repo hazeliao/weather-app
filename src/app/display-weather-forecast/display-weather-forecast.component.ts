@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./display-weather-forecast.component.css']
 })
 export class DisplayWeatherForecastComponent implements OnInit {
-
+  selectedLocation = 'Helsinki';
+ 
   constructor() { }
 
   ngOnInit() {
   }
-
+  update(selectedLocation: string) { this.selectedLocation = selectedLocation; }
 }
