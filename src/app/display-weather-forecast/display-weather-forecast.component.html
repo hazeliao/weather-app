@@ -10,3 +10,14 @@
         {{day}}
     </li>
 </ul>
+
+<br/>
+<br/>
+
+<h3>This weeks weather forecast in {{selectedLocation}}</h3>
+<ul>
+    <li *ngFor="let aday of oneWeeksForecast">
+        {{aday}}
+    </li>
+</ul>
+<span>Today is: {{today | date:'medium'}}</span>

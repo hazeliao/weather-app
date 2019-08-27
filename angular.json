@@ -23,6 +23,7 @@
                             "src/favicon.ico",
                             "src/assets",
                             "src/assets/dummy.xml",
+                            "src/assets/owmdata.json",
                             "src/assets/dummy.json"
                         ],
                         "styles": [

@@ -63,6 +63,14 @@ export class WeatherDataService {
 
   }
 
+  getCurrentWeeksWeather(): Observable<any> {
+    if ( environment.production === true ) {
+      return this.http.get('https://api.openweathermap.org/data/2.5/forecast?q=' + this.place + ',fi&units=metric&APPID=8e0ef355bcef9304849ea7bfed096124');
+    } else {
+      return this.http.get('assets/owmdata.json');
+    }
+  }
+
   setPlace(arg0: string): void {
     this.place = arg0;
   }
